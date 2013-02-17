@@ -11,6 +11,13 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 import java.io.File;
+import java.util.List;
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
 
 
 /**
@@ -31,9 +38,11 @@ public class FRCFMSTwitterParse {
            
         try {
                
+            new FRCFMSTwitterParse().start();
+                        
                 /**change to twitter xml url before competition*/
                 /**switch to twitter-java-api - cant import web xml appearently*/
-	File fXmlFile = new File("https://api.twitter.com/1/statuses/user_timeline.rss?screen_name=frcfms");
+	File fXmlFile = new File("G:\\wamp\\www\\songs.xml");
 	DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 	DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 	Document doc = dBuilder.parse(fXmlFile);
@@ -84,5 +93,20 @@ public class FRCFMSTwitterParse {
            }
     
     }
+    private void start() throws Exception{
+        URL url = new URL("https://api.twitter.com/1/statuses/user_timeline.rss?screen_name=frcfms");
+        URLConnection connection = url.openConnection();
 
+        Document doc = parseXML(connection.getInputStream());
+        NodeList descNodes = doc.getElementsByTagName("description");
+
+        for(int i=0; i<descNodes.getLength();i++)
+        {
+            System.out.println(descNodes.item(i).getTextContent());
+        }
+    }
+
+    private Document parseXML(InputStream inputStream) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
