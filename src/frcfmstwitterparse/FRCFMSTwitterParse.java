@@ -30,7 +30,7 @@ public class FRCFMSTwitterParse {
         try {
                
                 /**change to twitter xml url before competition*/
-	File fXmlFile = new File("G:/wamp/www/songs.xml");
+	File fXmlFile = new File("https://api.twitter.com/1/statuses/user_timeline.rss?screen_name=frcfms");
 	DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 	DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 	Document doc = dBuilder.parse(fXmlFile);
