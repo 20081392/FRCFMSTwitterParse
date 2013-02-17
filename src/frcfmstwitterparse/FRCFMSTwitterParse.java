@@ -41,7 +41,7 @@ public class FRCFMSTwitterParse {
  
 	System.out.println("----------------------------");
  
-	for (int temp = 0; temp < 1; temp++) {
+	for (int temp = 0; temp < nList.getLength(); temp++) {
                 /**asks for only first entry*/
  
 		Node nNode = nList.item(temp);
