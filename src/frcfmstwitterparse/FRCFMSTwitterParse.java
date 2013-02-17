@@ -15,7 +15,7 @@ import java.io.File;
 
 /**
  *
- * @author Alex
+ * @author Alex / Armadi
  */
 public class FRCFMSTwitterParse {
 
@@ -54,7 +54,7 @@ public class FRCFMSTwitterParse {
 			String tweet;
                                                 tweet = ("Tweet : " + eElement.getElementsByTagName("description").item(0).getTextContent());
                                                 /**print description tag*/
-                                                tweet.replaceAll("#FRC(\\S+)\\sTY\\s([PQE])\\sMC\\s(\\d+)\\sRF\\s(\\d+)\\sBF\\s(\\d+)\\sRA\\s(\\d+)\\s(\\d+)\\s(\\d+)\\sBA\\s(\\d+)\\s(\\d+)\\s(\\d+)\\sRC\\s(\\d+)\\sBC\\s(\\d+)\\sRFP\\s(\\d+)\\sBFP\\s(\\d+)\\sRAS\\s(\\d+)\\sBAS\\s(\\d+)\\sRTS\\s(\\d+)\\sBTS\\s(\\d+)", "Event Name : $1\nType : $2\nMatch Number : $3\nRed Final Score : $4\nBlue Final Score : $5\nRed Team 1 # : $6\nRed Team 2 # : $7\nRed Team 3 # : $8\nBlue Team 1 # : $9\nBlue Team 2 # : $10\nBlue Team 3 # : $11\nRed Climb Points : $12\nBlue Climb Points : $13\nRed Foul Points : $14\nBlue Foul Points : $15\nRed Auto Score : $16\nBlue Auto Score : $17\nRed Teleop Disc Points : $18\nBlue Teleop Disc Points : $19");
+                                                tweet.replaceAll("#FRC(\\S+)\\sTY\\s([PQE])\\sMC\\s(\\d+)\\sRF\\s(\\d+)\\sBF\\s(\\d+)\\sRA\\s(\\d+)\\s(\\d+)\\s(\\d+)\\sBA\\s(\\d+)\\s(\\d+)\\s(\\d+)\\sRC\\s(\\d+)\\sBC\\s(\\d+)\\sRFP\\s(\\d+)\\sBFP\\s(\\d+)\\sRAS\\s(\\d+)\\sBAS\\s(\\d+)\\sRTS\\s(\\d+)\\sBTS\\s(\\d+)", "Event Name : $1\nType : $2\nMatch Number : $3\n\n*Red Team Stats*\nFinal Score : $4\nTeam 1 # : $6\nTeam 2 # : $7\nTeam 3 # : $8\nClimb Points : $12\nFoul Points : $14\nAuto Score : $16\nTeleop Disc Points : $18\n\n*Blue Team Stats*\nFinal Score : $5\nTeam 1 # : $9\nTeam 2 # : $10\nTeam 3 # : $11\nClimb Points : $13\nFoul Points : $15\nAuto Score : $17\nTeleop Disc Points : $19");
                                                 
 		}
 	}
