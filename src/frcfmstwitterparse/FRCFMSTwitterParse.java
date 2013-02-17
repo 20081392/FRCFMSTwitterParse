@@ -25,7 +25,7 @@ public class FRCFMSTwitterParse {
         // TODO code application logic here
     
             
-    try {
+        try {
                
                 /**change to twitter xml url before competition*/
 	File fXmlFile = new File("G:/wamp/www/songs.xml");
@@ -57,20 +57,21 @@ public class FRCFMSTwitterParse {
 		}
 	}
 	System.out.println("----------------------------");
-        System.in.read();
+                System.in.read();
 	System.out.println("----------------------------");
-        /**while(enter==0) {
+                /**while(enter==0) {
             
              
                
-        };*/
-        System.out.println("----------------------------");
+                };*/
+                System.out.println("----------------------------");
 
-        System.exit(0);
+                System.exit(0);
         
-    } catch (Exception e) {
+           } 
+           catch (Exception e) {
 	e.printStackTrace();
-    }
+           }
     
     }
 }
