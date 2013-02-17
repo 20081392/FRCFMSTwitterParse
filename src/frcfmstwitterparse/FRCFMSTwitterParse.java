@@ -11,7 +11,6 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 import java.io.File;
-import java.util.regex;
 
 
 /**
@@ -30,7 +29,7 @@ public class FRCFMSTwitterParse {
         try {
                
                 /**change to twitter xml url before competition*/
-	File fXmlFile = new File("https://api.twitter.com/1/statuses/user_timeline.rss?screen_name=frcfms");
+	File fXmlFile = new File("G:\\wamp\\www\\songs.xml");
 	DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 	DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 	Document doc = dBuilder.parse(fXmlFile);
@@ -55,7 +54,7 @@ public class FRCFMSTwitterParse {
 			String tweet;
                                                 tweet = ("Tweet : " + eElement.getElementsByTagName("description").item(0).getTextContent());
                                                 /**print description tag*/
-                                                tweet = tweet.replaceAll("\"\\#FRC(\\S+)\\sTY\\s([PQE])\\sMC\\s(\\d+)\\sRF\\s(\\d+)\\sBF\\s(\\d+)\\sRA\\s(\\d+)\\s(\\d+)\\s(\\d+)\\sBA\\s(\\d+)\\s(\\d+)\\s(\\d+)\\sRC\\s(\\d+)\\sBC(\\d+)\\sRFP\\s(\\d+)\\sBFP\\s(\\d+)\\sRAS\\s(\\d+)\\sBAS\\s(\\d+)\\sRTS\\s(\\d+)\\sBTS\\s(\\d+)\", \"Event Name : $1\\nType : $2\\nMatch Number : $3\\nRed Final Score : $4\\nBlue Final Score : $5\\nRed Team 1 # : $6\\nRed Team 2 # : $7\\nRed Team 3 # : $8\\nBlue Team 1 # : $9\\nBlue Team 2 # : $10\\nBlue Team 3 # : $11\\nRed Climb Points : $12\\nBlue Climb Points : $13\\nRed Foul Points : $14\\nBlue Foul Points : $15\\nRed Auto Score : $16\\nBlue Auto Score : $17\\nRed Teleop Disc Points : $18\\nBlue Teleop Disc Points : $19\"");
+                                                tweet.replaceAll("#FRC(\\\\S+)\\\\sTY\\\\s([PQE])\\\\sMC\\\\s(\\\\d+)\\\\sRF\\\\s(\\\\d+)\\\\sBF\\\\s(\\\\d+)\\\\sRA\\\\s(\\\\d+)\\\\s(\\\\d+)\\\\s(\\\\d+)\\\\sBA\\\\s(\\\\d+)\\\\s(\\\\d+)\\\\s(\\\\d+)\\\\sRC\\\\s(\\\\d+)\\\\sBC\\\\s(\\\\d+)\\\\sRFP\\\\s(\\\\d+)\\\\sBFP\\\\s(\\\\d+)\\\\sRAS\\\\s(\\\\d+)\\\\sBAS\\\\s(\\\\d+)\\\\sRTS\\\\s(\\\\d+)\\\\sBTS\\\\s(\\\\d+)\", \"Event Name : $1\\nType : $2\\nMatch Number : $3\\nRed Final Score : $4\\nBlue Final Score : $5\\nRed Team 1 # : $6\\nRed Team 2 # : $7\\nRed Team 3 # : $8\\nBlue Team 1 # : $9\\nBlue Team 2 # : $10\\nBlue Team 3 # : $11\\nRed Climb Points : $12\\nBlue Climb Points : $13\\nRed Foul Points : $14\\nBlue Foul Points : $15\\nRed Auto Score : $16\\nBlue Auto Score : $17\\nRed Teleop Disc Points : $18\\nBlue Teleop Disc Points : $19");
                                                 
 		}
 	}
